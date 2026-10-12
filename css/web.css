@@ -1,10 +1,46 @@
 /* css/web.css */
 
+/* --- Page Header (Title & Back Button) --- */
+.page-header {
+    max-width: 1100px;
+    margin: 3rem auto 1rem auto; 
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+}
+
+.back-btn {
+    position: absolute;
+    left: 2rem; /* Aligns perfectly with the grid's left edge */
+    color: #999999;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 600;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.back-btn:hover {
+    color: #ffffff;
+    transform: translateX(-4px); /* Slight slide to the left on hover */
+}
+
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: #ffffff;
+}
+
+/* --- Web Apps Grid --- */
 .web-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto auto; 
     max-width: 1100px;
     align-items: start; 
+    margin-top: 2rem; /* Overrides the default 4rem gap from style.css */
 }
 
 /* LinkState spans the entire top width */
@@ -31,7 +67,7 @@
 .web-grid .bento-cell {
     padding: 2.5rem 2.5rem 0 2.5rem;
     justify-content: flex-start;
-    overflow: hidden;
+    overflow: hidden; 
 }
 
 .web-grid .cell-content {
@@ -49,27 +85,26 @@
 /* Hidden by default, grows on hover */
 .preview-container {
     width: 100%;
-    max-height: 0; /* Collapsed state */
+    max-height: 0; 
     opacity: 0;
     margin-top: 0;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
     overflow: hidden;
-    transition: max-height 0.6s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.3s ease, margin-top 0.4s ease;
+    transition: max-height 0.6s ease-in-out, opacity 0.3s ease, margin-top 0.4s ease;
 }
 
 .preview-img {
     display: block;
     width: 100%;
-    height: auto; /* Lets the image show its full natural height */
-    object-position: top center; 
+    height: auto; 
     opacity: 0.6;
-    transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: opacity 0.3s ease;
 }
 
 /* Hover States for Expansion */
 .link-cell:hover .preview-container {
-    max-height: 1000px; /* Massive max-height ensures the whole image fits */
+    max-height: 3000px; 
     opacity: 1;
 }
 
@@ -79,7 +114,6 @@
 
 .link-cell:hover .preview-img {
     opacity: 1;
-    transform: scale(1.02); 
 }
 
 /* Mobile Responsiveness */
@@ -92,5 +126,14 @@
     .project-linkstate, .project-bento, .project-file {
         grid-column: 1 / -1;
         grid-row: auto;
+    }
+    
+    .page-header {
+        justify-content: space-between;
+    }
+    
+    .back-btn {
+        position: relative;
+        left: 0;
     }
 }
