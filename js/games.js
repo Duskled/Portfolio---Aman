@@ -18,36 +18,47 @@ window.addEventListener('scroll', () => {
     }
 });
 
-const observerOptions = {
-    root: null,
-    rootMargin: '-10% 0px -10% 0px',
-    threshold: 0.3
-};
-
-const observer = new IntersectionObserver((entries) => {
+const revealObserver = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('appear');
-        } else {
-            entry.target.classList.remove('appear');
+            observer.unobserve(entry.target);
         }
     });
-}, observerOptions);
+}, { threshold: 0.15 });
 
 const fadeElements = document.querySelectorAll('.fade-in');
-fadeElements.forEach((el) => observer.observe(el));
+fadeElements.forEach((el) => revealObserver.observe(el));
+
+const footprintObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active-step');
+        } else {
+            entry.target.classList.remove('active-step');
+        }
+    });
+}, {
+    rootMargin: '-35% 0px -35% 0px',
+    threshold: 0
+});
+
+const footprints = document.querySelectorAll('.footprint-step');
+footprints.forEach((el) => footprintObserver.observe(el));
 
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const galleryImages = document.querySelectorAll('.hackathon-gallery img');
 
-galleryImages.forEach(img => {
-    img.addEventListener('click', () => {
-        lightboxImg.src = img.src;
-        lightbox.classList.remove('hidden');
+if(galleryImages && lightbox) {
+    galleryImages.forEach(img => {
+        img.addEventListener('click', () => {
+            lightboxImg.src = img.src;
+            lightbox.classList.remove('hidden');
+        });
     });
-});
 
-lightbox.addEventListener('click', () => {
-    lightbox.classList.add('hidden');
-});
+    lightbox.addEventListener('click', () => {
+        lightbox.classList.add('hidden');
+    });
+}
