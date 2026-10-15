@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Frijole&family=Slackey&family=Stick&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
 
 body, .cinematic-hero, .bento-grid {
     overflow-anchor: none;
@@ -77,7 +77,7 @@ body, .cinematic-hero, .bento-grid {
 }
 
 .main-avatar-3d {
-    width: 250px; 
+    width: 235px; 
     position: absolute;
     filter: drop-shadow(0px 30px 40px rgba(0, 0, 0, 0.4));
     animation: float-avatar 4s infinite alternate ease-in-out;
@@ -257,74 +257,87 @@ body, .cinematic-hero, .bento-grid {
     align-items: center;
 }
 
-.footprint-step {
-    position: relative;
+.pose-step {
     display: flex;
     align-items: center;
     width: 100%;
-    min-height: 250px;
+    min-height: 350px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    gap: 4rem;
 }
 
-.footprint-step.left { justify-content: flex-start; padding-left: 10%; }
-.footprint-step.right { justify-content: flex-end; padding-right: 10%; }
-
-.footprint-img {
-    width: 200px;
-    height: auto;
-    opacity: 0.08;
-    transition: opacity 0.6s ease, filter 0.6s ease;
+.pose-step.active-step {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.footprint-step.active-step .footprint-img {
-    opacity: 0.7;
+.pose-step.left { 
+    justify-content: flex-start; 
+    padding-left: 10%; 
+    flex-direction: row; 
 }
 
-.footprint-text {
-    position: absolute;
-    top: 50%;
+.pose-step.right { 
+    justify-content: flex-end; 
+    padding-right: 10%; 
+    flex-direction: row; 
+}
+
+.pose-img {
+    max-height: 300px; 
+    width: auto;
+    opacity: 0.15;
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.5));
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    z-index: 2;
+}
+
+.pose-step.active-step .pose-img {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.pose-text {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    white-space: nowrap;
     opacity: 0;
-    pointer-events: none;
     transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 1;
 }
 
-.footprint-step.left .footprint-text {
-    left: calc(10% + 240px);
-    transform: translate(-40px, -50%);
+.pose-step.left .pose-text {
+    transform: translateX(-40px);
     text-align: left;
 }
 
-.footprint-step.right .footprint-text {
-    right: calc(10% + 240px);
-    transform: translate(40px, -50%);
+.pose-step.right .pose-text {
+    transform: translateX(40px);
     text-align: right;
 }
 
-.footprint-step.active-step .footprint-text {
+.pose-step.active-step .pose-text {
     opacity: 1;
-    transform: translate(0, -50%);
-    pointer-events: auto;
+    transform: translateX(0);
 }
 
-.footprint-text h3 {
-    font-family: 'frijole', sans-serif;
+.pose-text h3 {
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 2.8rem;
-    color: #e0e0e0;
-    font-weight: 400;
+    color: #ffffff;
+    font-weight: 700;
     margin: 0;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    letter-spacing: -0.02em;
 }
 
-.footprint-text p {
-    font-family: 'Stick', monospace;
+.pose-text p {
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 1.15rem;
-    color: #888;
+    color: #999999;
     margin: 0;
-    max-width: 600px;
+    max-width: 350px;
     white-space: normal;
     font-weight: 400;
     line-height: 1.5;
@@ -391,20 +404,19 @@ body, .cinematic-hero, .bento-grid {
 }
 
 .award-box {
-    padding: 1.5rem 2rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start; 
-    gap: 4px;
+    padding: 0 2.5rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 6px !important;
+    height: 140px !important;
+    flex: none !important;
 }
 
-.text-right .award-box {
-    align-items: flex-end;
-}
-
-.award-box h3 { font-size: 1.5rem; color: #fff; margin: 0; }
-.award-position { font-size: 0.95rem; color: #888; font-weight: 600; margin: 0; }
+.award-box h3 { font-size: 1.5rem !important; color: #fff !important; margin: 0 !important; }
+.award-position { font-size: 0.95rem !important; color: #888 !important; font-weight: 600 !important; margin: 0 !important; }
 
 .hackathon-gallery {
     display: grid;
@@ -510,16 +522,15 @@ body, .cinematic-hero, .bento-grid {
         left: 0;
     }
     
-    .footprint-step.left, .footprint-step.right {
+    .pose-step.left, .pose-step.right {
         padding-left: 10%;
         padding-right: 10%;
+        flex-direction: column;
         justify-content: center;
+        gap: 2rem;
     }
     
-    .footprint-step.left .footprint-text, .footprint-step.right .footprint-text {
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%) translateY(70px);
+    .pose-step.left .pose-text, .pose-step.right .pose-text {
         text-align: center;
     }
     
@@ -529,21 +540,4 @@ body, .cinematic-hero, .bento-grid {
     }
     
     .avatar-column { order: -1; flex: 0 0 220px; transform: translateX(0); }
-    .text-right .award-box { align-items: flex-start; }
-}
-
-.award-box {
-    padding: 0 2.5rem !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    align-items: center !important;
-    text-align: center !important;
-    gap: 6px !important;
-    height: 140px !important;
-    flex: none !important;
-}
-
-.text-right .award-box {
-    align-items: center;
 }

@@ -27,10 +27,10 @@ const revealObserver = new IntersectionObserver((entries, observer) => {
     });
 }, { threshold: 0.15 });
 
-const fadeElements = document.querySelectorAll('.fade-in');
+const fadeElements = document.querySelectorAll('.fade-in:not(.pose-step)');
 fadeElements.forEach((el) => revealObserver.observe(el));
 
-const footprintObserver = new IntersectionObserver((entries) => {
+const poseObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry.target.classList.add('active-step');
@@ -43,8 +43,8 @@ const footprintObserver = new IntersectionObserver((entries) => {
     threshold: 0
 });
 
-const footprints = document.querySelectorAll('.footprint-step');
-footprints.forEach((el) => footprintObserver.observe(el));
+const poses = document.querySelectorAll('.pose-step');
+poses.forEach((el) => poseObserver.observe(el));
 
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
