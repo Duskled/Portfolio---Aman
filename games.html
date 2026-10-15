@@ -52,14 +52,17 @@
             </div>
         </div>
         
+        <div class="scroll-indicator">
+            <div class="arrow-down"></div>
+        </div>
     </section>
 
     <main class="bento-grid games-grid">
         
         <a href="https://duskled.itch.io/aaroh-hostel" target="_blank" class="bento-cell link-cell project-main">
             <div class="cell-content">
-                <h2>Aaroh - Hostel</h2>
-                <p>An interactive indie experience built around a hostel environment.</p>
+                <h2>Aaroh Hostel</h2>
+                <p>An indie experience I made centered around a hostel vibe.</p>
                 <span class="hover-indicator">Play Game -></span>
             </div>
             <div class="preview-container">
@@ -70,7 +73,7 @@
         <a href="https://duskled.itch.io/parachute-panic" target="_blank" class="bento-cell link-cell project-sub1">
             <div class="cell-content">
                 <h2>Parachute Panic</h2>
-                <p>An indie game developed and published on Itch.io. Survive the fall and dodge the obstacles.</p>
+                <p>A quick survival game I dropped on itch.io. Basically dodge stuff while falling.</p>
                 <span class="hover-indicator">Play on Itch.io -></span>
             </div>
             <div class="preview-container">
@@ -81,7 +84,7 @@
         <a href="https://duskled2.itch.io/platformer-x-solarpunk" target="_blank" class="bento-cell link-cell project-sub2">
             <div class="cell-content">
                 <h2>Platformer x Solarpunk</h2>
-                <p>A beautifully stylized platformer mixing jumping mechanics with a solarpunk aesthetic.</p>
+                <p>Stylized platformer taking a shot at the solarpunk aesthetic.</p>
                 <span class="hover-indicator">Play Game -></span>
             </div>
             <div class="preview-container">
@@ -91,29 +94,86 @@
 
     </main>
 
+    <section class="hackathon-journey">
+        <h2 class="journey-title">Hackathon Runs</h2>
+        
+        <div class="timeline-container">
+            
+            <div class="footprint-step left hidden">
+                <img src="assets/footprint.png" class="footprint-icon" alt="step">
+                <div class="footprint-content">
+                    <h3>Faraway Hackathon</h3>
+                    <p>Grinded through this one building out random ideas under a time crunch.</p>
+                </div>
+            </div>
+
+            <div class="footprint-step right hidden">
+                <img src="assets/footprint.png" class="footprint-icon" alt="step">
+                <div class="footprint-content">
+                    <h3>BIC 2.0</h3>
+                    <p>Rolled up to BIC 2.0 to write code and see what other devs were making.</p>
+                </div>
+            </div>
+
+            <div class="footprint-step left hidden">
+                <img src="assets/footprint.png" class="footprint-icon" alt="step">
+                <div class="footprint-content">
+                    <h3>Overclock Delhi</h3>
+                    <span>Aug 2026</span>
+                    <p>Made it to the offline finals pushing LinkState.</p>
+                </div>
+            </div>
+
+            <div class="trophy-room hidden">
+                <div class="trophy-glow"></div>
+                
+                <div class="trophy-showcase">
+                    
+                    <div class="win-column">
+                        <div class="award">
+                            <img src="assets/silver-medal.png" class="medal-icon" alt="Silver">
+                            <div class="award-text">
+                                <h4>2nd Place</h4>
+                                <p>Takumi Delhi, May 2026</p>
+                            </div>
+                        </div>
+                        <div class="hackathon-gallery">
+                            <img src="assets/takumi-1.jpeg" alt="Takumi Memory 1">
+                            <img src="assets/takumi-2.jpeg" alt="Takumi Memory 2">
+                            <img src="assets/takumi-3.jpeg" alt="Takumi Memory 3">
+                        </div>
+                    </div>
+
+                    <div class="avatar-column">
+                        <img src="assets/trophy-avatar.png" alt="Aman Winning" class="trophy-avatar">
+                    </div>
+
+                    <div class="win-column text-right">
+                        <div class="award">
+                            <img src="assets/gold-medal.png" class="medal-icon" alt="Gold">
+                            <div class="award-text">
+                                <h4>1st Place</h4>
+                                <p>AAROH x IIITD, July 2026</p>
+                            </div>
+                        </div>
+                        <div class="hackathon-gallery">
+                            <img src="assets/aaroh-1.jpeg" alt="Aaroh Memory 1">
+                            <img src="assets/aaroh-2.jpeg" alt="Aaroh Memory 2">
+                            <img src="assets/aaroh-3.jpeg" alt="Aaroh Memory 3">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <footer class="footer">
         <p>Built by Aman Singh in 2026</p>
     </footer>
 
     <script src="js/style.js"></script>
-    <script>
-        window.addEventListener('scroll', () => {
-            const hero = document.getElementById('hero-scene');
-            const scrollY = window.scrollY;
-            
-            const opacity = Math.max(1 - (scrollY / 400), 0); 
-            const translateY = scrollY * 0.4; 
-            const scale = Math.max(1 - (scrollY / 2000), 0.9);
-
-            hero.style.opacity = opacity;
-            hero.style.transform = `translateY(${translateY}px) scale(${scale})`;
-            
-            if (opacity === 0) {
-                hero.style.pointerEvents = 'none';
-            } else {
-                hero.style.pointerEvents = 'auto';
-            }
-        });
-    </script>
+    <script src="js/games.js"></script>
 </body>
 </html>
