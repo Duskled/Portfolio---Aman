@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik+Dirt&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Frijole&family=Slackey&family=Stick&display=swap');
 
 body, .cinematic-hero, .bento-grid {
     overflow-anchor: none;
@@ -235,7 +234,7 @@ body, .cinematic-hero, .bento-grid {
 
 .hackathon-journey {
     width: 100%;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 10rem auto 4rem auto;
     padding: 0 2rem;
     position: relative;
@@ -273,13 +272,11 @@ body, .cinematic-hero, .bento-grid {
     width: 200px;
     height: auto;
     opacity: 0.08;
-    filter: drop-shadow(0 0 15px rgba(0,0,0,0.8)) drop-shadow(0 0 25px rgba(0,0,0,0.6));
     transition: opacity 0.6s ease, filter 0.6s ease;
 }
 
 .footprint-step.active-step .footprint-img {
     opacity: 0.7;
-    filter: drop-shadow(0 0 20px rgba(0,0,0,0.95)) drop-shadow(0 0 35px rgba(0,0,0,0.9));
 }
 
 .footprint-text {
@@ -313,7 +310,7 @@ body, .cinematic-hero, .bento-grid {
 }
 
 .footprint-text h3 {
-    font-family: 'Rubik Dirt', sans-serif;
+    font-family: 'frijole', sans-serif;
     font-size: 2.8rem;
     color: #e0e0e0;
     font-weight: 400;
@@ -323,11 +320,11 @@ body, .cinematic-hero, .bento-grid {
 }
 
 .footprint-text p {
-    font-family: 'Special Elite', monospace;
+    font-family: 'Stick', monospace;
     font-size: 1.15rem;
     color: #888;
     margin: 0;
-    max-width: 350px;
+    max-width: 600px;
     white-space: normal;
     font-weight: 400;
     line-height: 1.5;
@@ -366,7 +363,7 @@ body, .cinematic-hero, .bento-grid {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    gap: 5rem;
     width: 100%;
 }
 
@@ -383,6 +380,7 @@ body, .cinematic-hero, .bento-grid {
     justify-content: center;
     position: relative;
     transform: translateX(-24px);
+    z-index: 10;
 }
 
 .trophy-avatar {
@@ -532,4 +530,20 @@ body, .cinematic-hero, .bento-grid {
     
     .avatar-column { order: -1; flex: 0 0 220px; transform: translateX(0); }
     .text-right .award-box { align-items: flex-start; }
+}
+
+.award-box {
+    padding: 0 2.5rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 6px !important;
+    height: 140px !important;
+    flex: none !important;
+}
+
+.text-right .award-box {
+    align-items: center;
 }
