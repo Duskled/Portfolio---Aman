@@ -9,7 +9,6 @@
 </head>
 <body>
 
-    <!-- Ambient Liquid Background -->
     <div class="ambient-blob blob-1"></div>
     <div class="ambient-blob blob-2"></div>
 
@@ -25,70 +24,39 @@
         </ul>
     </nav>
 
-    <!-- Page Header (Title & Back Button) -->
     <div class="page-header">
         <a href="index.html" class="back-btn">&larr; Back</a>
         <h1 class="page-title">Games</h1>
     </div>
 
-    <!-- Cinematic Hero Section -->
     <section class="cinematic-hero" id="hero-scene">
         <div class="hero-center-stage">
-            <!-- Your sitting gamer avatar -->
             <img src="assets/game - inside.png" alt="Aman Gaming" class="main-avatar-3d">
             
-            <!-- True 3D Orbital Game Previews -->
             <div class="float-wrapper float-game1">
                 <div class="floating-preview">
-                    <!-- Replace with your actual screenshot names -->
-                    <img src="assets/parachute-preview.png" alt="Parachute Panic">
+                    <img src="assets/aaroh-preview.png" alt="Aaroh Hostel">
                 </div>
             </div>
             
             <div class="float-wrapper float-game2">
                 <div class="floating-preview">
-                    <img src="assets/platformer-preview.png" alt="Platformer x Solarpunk">
+                    <img src="assets/parachute-preview.png" alt="Parachute Panic">
                 </div>
             </div>
             
             <div class="float-wrapper float-game3">
                 <div class="floating-preview">
-                    <img src="assets/aaroh-preview.png" alt="Aaroh Hostel">
+                    <img src="assets/platformer-preview.png" alt="Platformer x Solarpunk">
                 </div>
             </div>
         </div>
         
-        <div class="scroll-indicator">
-            <div class="arrow-down"></div>
-        </div>
     </section>
 
-    <!-- The Interactive Bento Grid -->
     <main class="bento-grid games-grid">
         
-        <a href="https://duskled.itch.io/" target="_blank" class="bento-cell link-cell project-main">
-            <div class="cell-content">
-                <h2>Parachute Panic</h2>
-                <p>An indie game developed and published on Itch.io. Survive the fall and dodge the obstacles.</p>
-                <span class="hover-indicator">Play on Itch.io -></span>
-            </div>
-            <div class="preview-container">
-                <img src="assets/parachute-preview.png" alt="Parachute Panic" class="preview-img">
-            </div>
-        </a>
-
-        <a href="https://duskled.itch.io/" target="_blank" class="bento-cell link-cell project-sub1">
-            <div class="cell-content">
-                <h2>Platformer x Solarpunk</h2>
-                <p>A beautifully stylized platformer mixing jumping mechanics with a solarpunk aesthetic.</p>
-                <span class="hover-indicator">Play Game -></span>
-            </div>
-            <div class="preview-container">
-                <img src="assets/platformer-preview.png" alt="Platformer x Solarpunk" class="preview-img">
-            </div>
-        </a>
-
-        <a href="https://duskled.itch.io/" target="_blank" class="bento-cell link-cell project-sub2">
+        <a href="https://duskled.itch.io/aaroh-hostel" target="_blank" class="bento-cell link-cell project-main">
             <div class="cell-content">
                 <h2>Aaroh - Hostel</h2>
                 <p>An interactive indie experience built around a hostel environment.</p>
@@ -99,16 +67,35 @@
             </div>
         </a>
 
+        <a href="https://duskled.itch.io/parachute-panic" target="_blank" class="bento-cell link-cell project-sub1">
+            <div class="cell-content">
+                <h2>Parachute Panic</h2>
+                <p>An indie game developed and published on Itch.io. Survive the fall and dodge the obstacles.</p>
+                <span class="hover-indicator">Play on Itch.io -></span>
+            </div>
+            <div class="preview-container">
+                <img src="assets/parachute-preview.png" alt="Parachute Panic" class="preview-img">
+            </div>
+        </a>
+
+        <a href="https://duskled2.itch.io/platformer-x-solarpunk" target="_blank" class="bento-cell link-cell project-sub2">
+            <div class="cell-content">
+                <h2>Platformer x Solarpunk</h2>
+                <p>A beautifully stylized platformer mixing jumping mechanics with a solarpunk aesthetic.</p>
+                <span class="hover-indicator">Play Game -></span>
+            </div>
+            <div class="preview-container">
+                <img src="assets/platformer-preview.png" alt="Platformer x Solarpunk" class="preview-img">
+            </div>
+        </a>
+
     </main>
 
     <footer class="footer">
         <p>Built by Aman Singh in 2026</p>
     </footer>
 
-    <!-- Shared Physics Script -->
     <script src="js/style.js"></script>
-
-    <!-- Scroll Dissolve Animation Script -->
     <script>
         window.addEventListener('scroll', () => {
             const hero = document.getElementById('hero-scene');
