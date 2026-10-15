@@ -20,19 +20,34 @@ window.addEventListener('scroll', () => {
 
 const observerOptions = {
     root: null,
-    rootMargin: '0px',
-    threshold: 0.15
+    rootMargin: '-10% 0px -10% 0px',
+    threshold: 0.3
 };
 
-const observer = new IntersectionObserver((entries, observer) => {
+const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('show');
-            entry.target.classList.remove('hidden');
-            observer.unobserve(entry.target);
+            entry.target.classList.add('appear');
+        } else {
+            entry.target.classList.remove('appear');
         }
     });
 }, observerOptions);
 
-const hiddenElements = document.querySelectorAll('.hidden');
-hiddenElements.forEach((el) => observer.observe(el));
+const fadeElements = document.querySelectorAll('.fade-in');
+fadeElements.forEach((el) => observer.observe(el));
+
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const galleryImages = document.querySelectorAll('.hackathon-gallery img');
+
+galleryImages.forEach(img => {
+    img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.classList.remove('hidden');
+    });
+});
+
+lightbox.addEventListener('click', () => {
+    lightbox.classList.add('hidden');
+});

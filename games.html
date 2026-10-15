@@ -51,10 +51,6 @@
                 </div>
             </div>
         </div>
-        
-        <div class="scroll-indicator">
-            <div class="arrow-down"></div>
-        </div>
     </section>
 
     <main class="bento-grid games-grid">
@@ -95,52 +91,47 @@
     </main>
 
     <section class="hackathon-journey">
-        <h2 class="journey-title">Hackathon Runs</h2>
         
         <div class="timeline-container">
             
-            <div class="footprint-step left hidden">
-                <img src="assets/footprint.png" class="footprint-icon" alt="step">
-                <div class="footprint-content">
+            <div class="footprint-step left fade-in">
+                <img src="assets/footprint-left.png" class="footprint-img" alt="step">
+                <div class="footprint-text">
                     <h3>Faraway Hackathon</h3>
                     <p>Grinded through this one building out random ideas under a time crunch.</p>
                 </div>
             </div>
 
-            <div class="footprint-step right hidden">
-                <img src="assets/footprint.png" class="footprint-icon" alt="step">
-                <div class="footprint-content">
+            <div class="footprint-step right fade-in">
+                <img src="assets/footprint-right.png" class="footprint-img" alt="step">
+                <div class="footprint-text">
                     <h3>BIC 2.0</h3>
                     <p>Rolled up to BIC 2.0 to write code and see what other devs were making.</p>
                 </div>
             </div>
 
-            <div class="footprint-step left hidden">
-                <img src="assets/footprint.png" class="footprint-icon" alt="step">
-                <div class="footprint-content">
+            <div class="footprint-step left fade-in">
+                <img src="assets/footprint-left.png" class="footprint-img" alt="step">
+                <div class="footprint-text">
                     <h3>Overclock Delhi</h3>
-                    <span>Aug 2026</span>
-                    <p>Made it to the offline finals pushing LinkState.</p>
+                    <p>Made it to the offline finals pushing LinkState in Aug 2026.</p>
                 </div>
             </div>
 
-            <div class="trophy-room hidden">
+            <div class="trophy-room fade-in">
                 <div class="trophy-glow"></div>
                 
                 <div class="trophy-showcase">
                     
                     <div class="win-column">
-                        <div class="award">
-                            <img src="assets/silver-medal.png" class="medal-icon" alt="Silver">
-                            <div class="award-text">
-                                <h4>2nd Place</h4>
-                                <p>Takumi Delhi, May 2026</p>
-                            </div>
+                        <div class="bento-cell award-box">
+                            <h3>Takumi Delhi</h3>
+                            <p class="award-position">2nd Place (Game Dev)</p>
                         </div>
-                        <div class="hackathon-gallery">
-                            <img src="assets/takumi-1.jpeg" alt="Takumi Memory 1">
-                            <img src="assets/takumi-2.jpeg" alt="Takumi Memory 2">
-                            <img src="assets/takumi-3.jpeg" alt="Takumi Memory 3">
+                        <div class="hackathon-gallery left-gallery">
+                            <img src="assets/takumi-1.jpeg" alt="Takumi Memory 1" class="gal-main">
+                            <img src="assets/takumi-2.jpeg" alt="Takumi Memory 2" class="gal-sub1">
+                            <img src="assets/takumi-3.jpeg" alt="Takumi Memory 3" class="gal-sub2">
                         </div>
                     </div>
 
@@ -149,17 +140,14 @@
                     </div>
 
                     <div class="win-column text-right">
-                        <div class="award">
-                            <img src="assets/gold-medal.png" class="medal-icon" alt="Gold">
-                            <div class="award-text">
-                                <h4>1st Place</h4>
-                                <p>AAROH x IIITD, July 2026</p>
-                            </div>
+                        <div class="bento-cell award-box">
+                            <h3>AAROH x IIITD</h3>
+                            <p class="award-position">1st Place (Game Dev)</p>
                         </div>
-                        <div class="hackathon-gallery">
-                            <img src="assets/aaroh-1.jpeg" alt="Aaroh Memory 1">
-                            <img src="assets/aaroh-2.jpeg" alt="Aaroh Memory 2">
-                            <img src="assets/aaroh-3.jpeg" alt="Aaroh Memory 3">
+                        <div class="hackathon-gallery right-gallery">
+                            <img src="assets/aaroh-1.jpeg" alt="Aaroh Memory 1" class="gal-main">
+                            <img src="assets/aaroh-2.jpeg" alt="Aaroh Memory 2" class="gal-sub1">
+                            <img src="assets/aaroh-3.jpeg" alt="Aaroh Memory 3" class="gal-sub2">
                         </div>
                     </div>
 
@@ -168,6 +156,10 @@
 
         </div>
     </section>
+
+    <div id="lightbox" class="lightbox-overlay hidden">
+        <img src="" id="lightbox-img" alt="Fullscreen preview">
+    </div>
 
     <footer class="footer">
         <p>Built by Aman Singh in 2026</p>
