@@ -48,7 +48,7 @@ poses.forEach((el) => poseObserver.observe(el));
 
 const lightbox = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
-const galleryImages = document.querySelectorAll('.hackathon-gallery img');
+const galleryImages = document.querySelectorAll('.scatter-img');
 
 if(galleryImages && lightbox) {
     galleryImages.forEach(img => {
