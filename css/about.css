@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
+
+body, .cinematic-hero, .bento-grid {
+    overflow-anchor: none;
+}
+
+.page-header {
+    max-width: 1100px;
+    margin: 2rem auto 0 auto; 
+    padding: 0 2rem;
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    z-index: 10;
+}
+
+.back-btn {
+    color: #999999;
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 600;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.back-btn:hover {
+    color: #ffffff;
+    transform: translateX(-4px); 
+}
+
+.cinematic-hero {
+    min-height: calc(100vh - 120px); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 5;
+    perspective: 1200px;
+}
+
+.about-hero-split {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    padding: 0 2rem;
+}
+
+.hero-left {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+}
+
+.main-avatar-3d {
+    width: 100%;
+    max-width: 380px;
+    height: auto;
+    filter: drop-shadow(0px 30px 40px rgba(0, 0, 0, 0.5));
+    animation: float-avatar 4s infinite alternate ease-in-out;
+}
+
+@keyframes float-avatar {
+    0% { transform: translateY(0px) translateZ(0px); }
+    100% { transform: translateY(-20px) translateZ(0px); }
+}
+
+.hero-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.giant-intro {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 4.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 1rem 0;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+}
+
+.intro-sub {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.25rem;
+    color: #aaaaaa;
+    line-height: 1.6;
+    max-width: 450px;
+    margin: 0;
+}
+
+.about-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(200px, auto);
+    gap: 1.5rem;
+    max-width: 1100px;
+    margin: 2rem auto 8rem auto;
+}
+
+.about-grid .bento-cell {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.about-grid h3 {
+    font-size: 1.8rem;
+    color: #ffffff;
+    margin: 0 0 1rem 0;
+}
+
+.about-grid p {
+    font-size: 1.05rem;
+    color: #999999;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.cell-dev {
+    grid-column: 1 / 3;
+}
+
+.cell-chess {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+    justify-content: space-between;
+}
+
+.cell-chess .cell-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.cell-chess .hover-indicator {
+    margin-top: auto;
+    padding-top: 2rem;
+}
+
+.cell-lang {
+    grid-column: 1 / 2;
+}
+
+.cell-afk {
+    grid-column: 2 / 3;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 900px) {
+    .about-hero-split {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+        margin-top: 4rem;
+    }
+
+    .hero-left {
+        justify-content: center;
+    }
+
+    .main-avatar-3d {
+        max-width: 280px;
+    }
+
+    .hero-right {
+        align-items: center;
+    }
+
+    .giant-intro {
+        font-size: 3.5rem;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cell-dev, .cell-chess, .cell-lang, .cell-afk {
+        grid-column: 1 / -1;
+        grid-row: auto;
+    }
+}
