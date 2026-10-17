@@ -166,8 +166,12 @@ body, .cinematic-hero, .bento-grid {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto auto; 
     max-width: 1100px;
-    align-items: start; 
+    align-items: start; /* Revert this back so they animate independently */
     margin-top: 2rem; 
+}
+
+.project-sub1, .project-sub2 {
+    min-height: 280px; 
 }
 
 .project-main {
@@ -192,14 +196,21 @@ body, .cinematic-hero, .bento-grid {
     padding: 2.5rem 2.5rem 0 2.5rem;
     justify-content: flex-start;
     overflow: hidden; 
+    display: flex;
+    flex-direction: column;
 }
 
 .robotics-grid .cell-content {
-    height: auto; 
-    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
     margin-bottom: 2.5rem; 
     max-width: 600px; 
     transition: margin-bottom 0.4s ease;
+}
+
+.robotics-grid .hover-indicator {
+    margin-top: auto; 
 }
 
 .project-main h2 {

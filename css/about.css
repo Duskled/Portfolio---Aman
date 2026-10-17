@@ -40,8 +40,8 @@ body {
 
 .about-journey {
     width: 100%;
-    max-width: 1100px;
-    margin: 4rem auto 4rem auto;
+    max-width: 1200px;
+    margin: 10rem auto 4rem auto;
     padding: 0 2rem;
     position: relative;
     z-index: 5;
@@ -50,6 +50,7 @@ body {
 .timeline-container {
     display: flex;
     flex-direction: column;
+    gap: 12rem;
     position: relative;
     align-items: center;
 }
@@ -58,11 +59,11 @@ body {
     display: flex;
     align-items: center;
     width: 100%;
-    min-height: 85vh;
+    min-height: 350px;
     opacity: 0;
     transform: translateY(40px);
     transition: opacity 0.8s ease, transform 0.8s ease;
-    gap: 5rem;
+    gap: 4rem;
 }
 
 .pose-step.active-step {
@@ -72,18 +73,18 @@ body {
 
 .pose-step.left { 
     justify-content: flex-start; 
-    padding-left: 5%; 
+    padding-left: 10%; 
     flex-direction: row; 
 }
 
 .pose-step.right { 
     justify-content: flex-end; 
-    padding-right: 5%; 
+    padding-right: 10%; 
     flex-direction: row; 
 }
 
 .pose-img {
-    max-height: 450px; 
+    max-height: 300px; 
     width: auto;
     opacity: 0.15;
     filter: drop-shadow(0 15px 25px rgba(0,0,0,0.5));
@@ -92,7 +93,7 @@ body {
 }
 
 .final-avatar {
-    max-height: 500px;
+    max-height: 300px;
 }
 
 .pose-step.active-step .pose-img {
@@ -126,7 +127,7 @@ body {
 
 .pose-text h3 {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 3.5rem;
+    font-size: 2.8rem;
     color: #ffffff;
     font-weight: 700;
     margin: 0;
@@ -135,27 +136,24 @@ body {
 
 .pose-text p {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 1.25rem;
-    color: #aaaaaa;
+    font-size: 1.15rem;
+    color: #999999;
     margin: 0;
-    max-width: 450px;
+    max-width: 550px;
     white-space: normal;
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.5;
 }
 
 .chess-link {
     color: #ffffff;
     text-decoration: none;
     font-weight: 700;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-    padding-bottom: 2px;
-    transition: border-color 0.3s ease, color 0.3s ease;
+    transition: color 0.3s ease;
 }
 
 .chess-link:hover {
     color: #4CAF50;
-    border-color: #4CAF50;
 }
 
 .fade-in {
@@ -170,18 +168,21 @@ body {
 }
 
 @media (max-width: 900px) {
-    .pose-step {
-        min-height: 70vh;
-        gap: 3rem;
-        padding-top: 4rem;
-        padding-bottom: 4rem;
+    .page-header {
+        justify-content: space-between;
     }
     
+    .back-btn {
+        position: relative;
+        left: 0;
+    }
+
     .pose-step.left, .pose-step.right {
-        padding-left: 5%;
-        padding-right: 5%;
+        padding-left: 10%;
+        padding-right: 10%;
         flex-direction: column;
         justify-content: center;
+        gap: 2rem;
     }
     
     .pose-step.left .pose-text, .pose-step.right .pose-text {
@@ -191,9 +192,5 @@ body {
     
     .pose-step.active-step .pose-text {
         transform: translateY(0) translateX(0);
-    }
-    
-    .pose-img, .final-avatar {
-        max-height: 300px;
     }
 }
