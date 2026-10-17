@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap');
 
-body, .cinematic-hero, .bento-grid {
+body {
     overflow-anchor: none;
 }
 
@@ -10,12 +10,15 @@ body, .cinematic-hero, .bento-grid {
     padding: 0 2rem;
     display: flex;
     align-items: center;
+    justify-content: center;
     position: relative;
     width: 100%;
     z-index: 10;
 }
 
 .back-btn {
+    position: absolute;
+    left: 2rem; 
     color: #999999;
     text-decoration: none;
     font-size: 1.05rem;
@@ -28,129 +31,131 @@ body, .cinematic-hero, .bento-grid {
     transform: translateX(-4px); 
 }
 
-.cinematic-hero {
-    min-height: calc(100vh - 120px); 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 5;
-    perspective: 1200px;
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: #ffffff;
 }
 
-.about-hero-split {
+.about-journey {
     width: 100%;
     max-width: 1100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 4rem;
+    margin: 4rem auto 4rem auto;
     padding: 0 2rem;
-}
-
-.hero-left {
-    flex: 1;
-    display: flex;
-    justify-content: flex-end;
     position: relative;
+    z-index: 5;
 }
 
-.main-avatar-3d {
-    width: 100%;
-    max-width: 380px;
-    height: auto;
-    filter: drop-shadow(0px 30px 40px rgba(0, 0, 0, 0.5));
-    animation: float-avatar 4s infinite alternate ease-in-out;
-}
-
-@keyframes float-avatar {
-    0% { transform: translateY(0px) translateZ(0px); }
-    100% { transform: translateY(-20px) translateZ(0px); }
-}
-
-.hero-right {
-    flex: 1;
+.timeline-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
+    position: relative;
+    align-items: center;
 }
 
-.giant-intro {
+.pose-step {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: 85vh;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    gap: 5rem;
+}
+
+.pose-step.active-step {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.pose-step.left { 
+    justify-content: flex-start; 
+    padding-left: 5%; 
+    flex-direction: row; 
+}
+
+.pose-step.right { 
+    justify-content: flex-end; 
+    padding-right: 5%; 
+    flex-direction: row; 
+}
+
+.pose-img {
+    max-height: 450px; 
+    width: auto;
+    opacity: 0.15;
+    filter: drop-shadow(0 15px 25px rgba(0,0,0,0.5));
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    z-index: 2;
+}
+
+.final-avatar {
+    max-height: 500px;
+}
+
+.pose-step.active-step .pose-img {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.pose-text {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 1;
+}
+
+.pose-step.left .pose-text {
+    transform: translateX(-40px);
+    text-align: left;
+}
+
+.pose-step.right .pose-text {
+    transform: translateX(40px);
+    text-align: right;
+}
+
+.pose-step.active-step .pose-text {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.pose-text h3 {
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 4.5rem;
-    font-weight: 700;
+    font-size: 3.5rem;
     color: #ffffff;
-    margin: 0 0 1rem 0;
-    letter-spacing: -0.03em;
-    line-height: 1.1;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.02em;
 }
 
-.intro-sub {
+.pose-text p {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 1.25rem;
     color: #aaaaaa;
-    line-height: 1.6;
+    margin: 0;
     max-width: 450px;
-    margin: 0;
-}
-
-.about-grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: minmax(200px, auto);
-    gap: 1.5rem;
-    max-width: 1100px;
-    margin: 2rem auto 8rem auto;
-}
-
-.about-grid .bento-cell {
-    padding: 2.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-.about-grid h3 {
-    font-size: 1.8rem;
-    color: #ffffff;
-    margin: 0 0 1rem 0;
-}
-
-.about-grid p {
-    font-size: 1.05rem;
-    color: #999999;
+    white-space: normal;
+    font-weight: 400;
     line-height: 1.6;
-    margin: 0;
 }
 
-.cell-dev {
-    grid-column: 1 / 3;
+.chess-link {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 700;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 2px;
+    transition: border-color 0.3s ease, color 0.3s ease;
 }
 
-.cell-chess {
-    grid-column: 3 / 4;
-    grid-row: 1 / 3;
-    justify-content: space-between;
-}
-
-.cell-chess .cell-content {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.cell-chess .hover-indicator {
-    margin-top: auto;
-    padding-top: 2rem;
-}
-
-.cell-lang {
-    grid-column: 1 / 2;
-}
-
-.cell-afk {
-    grid-column: 2 / 3;
+.chess-link:hover {
+    color: #4CAF50;
+    border-color: #4CAF50;
 }
 
 .fade-in {
@@ -165,35 +170,30 @@ body, .cinematic-hero, .bento-grid {
 }
 
 @media (max-width: 900px) {
-    .about-hero-split {
-        flex-direction: column;
-        text-align: center;
-        gap: 2rem;
-        margin-top: 4rem;
+    .pose-step {
+        min-height: 70vh;
+        gap: 3rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
     }
-
-    .hero-left {
+    
+    .pose-step.left, .pose-step.right {
+        padding-left: 5%;
+        padding-right: 5%;
+        flex-direction: column;
         justify-content: center;
     }
-
-    .main-avatar-3d {
-        max-width: 280px;
+    
+    .pose-step.left .pose-text, .pose-step.right .pose-text {
+        text-align: center;
+        transform: translateY(40px) translateX(0);
     }
-
-    .hero-right {
-        align-items: center;
+    
+    .pose-step.active-step .pose-text {
+        transform: translateY(0) translateX(0);
     }
-
-    .giant-intro {
-        font-size: 3.5rem;
-    }
-
-    .about-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .cell-dev, .cell-chess, .cell-lang, .cell-afk {
-        grid-column: 1 / -1;
-        grid-row: auto;
+    
+    .pose-img, .final-avatar {
+        max-height: 300px;
     }
 }
